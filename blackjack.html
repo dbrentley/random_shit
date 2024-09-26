@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Content</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #ffffff;
+        }
+
+        a {
+            color: #4da6ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #2b2b2b;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+
+        pre {
+            background-color: #2b2b2b;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        blockquote {
+            border-left: 4px solid #4da6ff;
+            margin: 0;
+            padding-left: 16px;
+            color: #b0b0b0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2b2b2b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="content">
+            <!-- Your Markdown content will be inserted here -->
+        </div>
+    </div>
+
+    <!-- Include Marked.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // Your Markdown content
+        const markdownContent = `
+# Your Markdown Title
+
+This is where your Markdown content will be displayed.
+
+## Features
+
+- Automatic conversion of Markdown to HTML
+- Dark theme for reduced eye strain
+- Responsive design
+
+### Code Example
+
+\`\`\`python
+def hello_world():
+    print("Hello, Markdown!")
+\`\`\`
+
+> This is a blockquote. It can be used for emphasizing important information.
+
+For more information, visit [Marked.js documentation](https://marked.js.org/).
+        `;
+
+        // Convert Markdown to HTML and insert into the page
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('content').innerHTML = marked.parse(markdownContent);
+        });
+    </script>
+</body>
+
+</html>
